@@ -1,0 +1,34 @@
+{
+  "name": "aigarage",
+  "displayName": "AI Garage",
+  "version": "0.1.9",
+  "description": "Search AI Garage's YouTube videos, newsletter and X posts, plus the Agent Wikis reference library, from inside your agent.",
+  "author": {
+    "name": "AI Garage",
+    "url": "https://agentwikis.com"
+  },
+  "homepage": "https://agentwikis.com",
+  "repository": "https://github.com/tonbistudio/aigarage-plugin",
+  "license": "MIT",
+  "keywords": [
+    "ai-garage",
+    "agent-wikis",
+    "youtube",
+    "mcp",
+    "skills"
+  ],
+  "logo": "assets/icon.png",
+  "skills": "./skills/",
+  "mcpServers": "./.cursor-plugin/mcp.json",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "AGENTWIKIS_PRO_KEY": {
+        "type": "string",
+        "title": "Agent Wikis Pro key (optional)",
+        "description": "Leave empty for the free tier. A Pro key from agentwikis.com/pro unlocks XL wiki pages, Pro skills, agent tools and routines.",
+        "default": ""
+      }
+    }
+  }
+}

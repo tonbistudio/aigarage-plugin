@@ -37,7 +37,7 @@ Hermes:
 
     hermes plugins install tonbistudio/aigarage-plugin --enable
 
-Cursor reads the same folder (root `plugin.json`, `skills/`, `mcp.json`).
+Cursor: install **AI Garage** from the Cursor Marketplace (cursor.com/marketplace), or in Cursor open Settings, then Plugins, and add `tonbistudio/aigarage-plugin`. Cursor reads `.cursor-plugin/plugin.json`.
 
 Any other MCP client can add the two server URLs above directly.
 
@@ -64,7 +64,18 @@ Optional. Everything works on the free tier without a key. A key from https://ag
   4. Start a new Codex session. If Codex then shows no Agent Wikis tools at all, it cannot see the key: repeat step 2.
 - Grok Build: run `grok mcp add --scope user agentwikis "https://agentwikis.com/mcp" --header "Authorization: Bearer aw_your_key"` with your key in place of `aw_your_key` (keep the quotes), then start a new Grok session.
 - Hermes Agent: `hermes mcp add agentwikis --url "https://agentwikis.com/mcp" --auth header`, answer yes to authentication, and paste the key when asked.
-- Cursor: add `"agentwikis": { "url": "https://agentwikis.com/mcp", "headers": { "Authorization": "Bearer aw_your_key" } }` under `mcpServers` in `~/.cursor/mcp.json`.
+- Cursor:
+  1. Open the Cursor dashboard at https://cursor.com/dashboard, go to **Plugins**, find **AI Garage** and click **Configure**.
+  2. Paste your key into **Agent Wikis Pro key (optional)** and save.
+  3. Restart Cursor. Asking for a Pro skill now returns the full skill instead of a locked notice.
+
+  If your plan has no **Configure** button, add the key to Cursor's own MCP settings instead: open `~/.cursor/mcp.json` (on Windows `%USERPROFILE%\.cursor\mcp.json`) and put this inside `"mcpServers": { }`, with your key in place of `aw_your_key`:
+
+  ```
+  "agentwikis": { "url": "https://agentwikis.com/mcp", "headers": { "Authorization": "Bearer aw_your_key" } }
+  ```
+
+  Save the file and restart Cursor.
 
 In Codex, Grok Build and Hermes Agent the connection you add is named `agentwikis` and takes the place of the plugin's free one.
 
