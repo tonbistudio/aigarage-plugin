@@ -1,7 +1,7 @@
 {
   "name": "aigarage",
   "displayName": "AI Garage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Search AI Garage's YouTube videos, newsletter and X posts, plus the Agent Wikis reference library, from inside your agent.",
   "author": {
     "name": "AI Garage",

@@ -24,7 +24,7 @@ Cite the wiki page you used. Each page carries its sources and the version it de
 - `list_agent_tools(query?)` and `read_agent_tool(name, path?)`: command-line tools taken from the specialist agents. Each entry names the specialist it comes from. `access: "pro"` tools are read-only and can be loaded one at a time. `access: "install-only"` tools change things, so they are described but never served; they come with the full specialist.
 - `list_routines(query?)` and `read_routine(name, path?)`: scheduled jobs from the specialist agents, each with a schedule, a script and a prompt.
 
-Search these catalogues directly with `query`. There is no need to pick a specialist first. Tools and routines are files to read and run on the user's machine. Nothing runs on the server.
+Search these catalogues directly with `query`. There is no need to pick a specialist first. Tools and routines are files that run on the user's machine; nothing runs on the server. Before saving, running or scheduling any of them, show the user what it does and get their explicit OK. Never create a scheduled job without the user's confirmation.
 
 ## Free and Pro
 
@@ -39,3 +39,5 @@ Every locked result ends with "How to unlock" and the link https://agentwikis.co
 - Cursor: add `"agentwikis": { "url": "https://agentwikis.com/mcp", "headers": { "Authorization": "Bearer <key>" } }` under `mcpServers` in `~/.cursor/mcp.json`.
 
 In Codex, Grok Build and Hermes Agent the connection the user adds is named `agentwikis` and takes the place of this plugin's free one. Never ask the user to paste the key into the chat.
+
+Tell the user to keep the key private: a key typed into a command stays in the shell history, and Cursor keeps it in plain text in `mcp.json`. If it leaks, rotate it at https://agentwikis.com/pro. A key that isn't recognised (a typo, or an old key after rotating) gives the free tier, and every result says so. If a result starts with that notice, pass it on to the user.

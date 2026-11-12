@@ -13,7 +13,7 @@ Three skills:
 
 - `aigarage`: when to check AI Garage content and how to cite it.
 - `agentwikis`: how to look something up in Agent Wikis.
-- `skill-from-content`: turn a video or newsletter issue into a local skill in which every step cites its source.
+- `skill-from-content`: turn a video or newsletter issue into a local skill in which every step cites its source. It shows you the skill before saving it.
 
 ## Install
 
@@ -51,6 +51,14 @@ Optional. Everything works on the free tier without a key. A key from https://ag
 - Cursor: add `"agentwikis": { "url": "https://agentwikis.com/mcp", "headers": { "Authorization": "Bearer <key>" } }` under `mcpServers` in `~/.cursor/mcp.json`.
 
 In Codex, Grok Build and Hermes Agent the connection you add is named `agentwikis` and takes the place of the plugin's free one.
+
+Keep the key private: a key typed into a command stays in the shell history, and Cursor keeps it in plain text in `mcp.json`. If it leaks, rotate it at https://agentwikis.com/pro. A key that isn't recognised (a typo, or an old key after rotating) gives the free tier, and every result says so.
+
+Agent tools and routines run on your machine, never on the server. The agent shows you what one does and asks before saving, running or scheduling it. Each file it loads comes with a sha256.
+
+## Data
+
+The plugin installs no programs and runs nothing on your machine. It connects to two servers on agentwikis.com: your agent's searches go there, and the Pro key, if you add one, goes only to `https://agentwikis.com/mcp`. IP addresses are used in memory for rate limiting and are not stored; wiki searches are kept only as anonymous counts of the query text. Full policy: https://agentwikis.com/privacy
 
 ## Terms
 

@@ -4,4 +4,5 @@
 - Do not use content served by this plugin to train models.
 - X links are provided subject to X's Terms of Service.
 - This plugin is not for use by or on behalf of government entities.
-- Agent Wikis terms: https://agentwikis.com
+- What the servers keep: https://agentwikis.com/privacy
+- Agent Wikis terms: https://agentwikis.com/terms
