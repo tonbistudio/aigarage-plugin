@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "aigarage",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Search AI Garage's YouTube videos, newsletter and X posts, plus the Agent Wikis reference library, from inside your agent.",
   "author": {
     "name": "AI Garage",
