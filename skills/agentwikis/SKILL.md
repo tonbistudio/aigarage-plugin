@@ -47,10 +47,10 @@ Every locked result ends with "How to unlock" and the link https://agentwikis.co
      ```
 
   2. Close the terminal and open a new one, so it can see the key.
-  3. Run `codex mcp add agentwikis --url https://agentwikis.com/mcp --bearer-token-env-var AGENTWIKIS_API_KEY`.
+  3. Run `codex mcp add agentwikis --url "https://agentwikis.com/mcp" --bearer-token-env-var AGENTWIKIS_API_KEY`.
   4. Start a new Codex session.
-- Grok Build: run `grok mcp add --scope user agentwikis https://agentwikis.com/mcp --header "Authorization: Bearer aw_your_key"` with the key in place of `aw_your_key` (keep the quotes), then start a new Grok session.
-- Hermes Agent: `hermes mcp add agentwikis --url https://agentwikis.com/mcp --auth header`, answer yes to authentication, paste the key, then `/reload-mcp`.
+- Grok Build: run `grok mcp add --scope user agentwikis "https://agentwikis.com/mcp" --header "Authorization: Bearer aw_your_key"` with the key in place of `aw_your_key` (keep the quotes), then start a new Grok session.
+- Hermes Agent: `hermes mcp add agentwikis --url "https://agentwikis.com/mcp" --auth header`, answer yes to authentication, paste the key, then `/reload-mcp`.
 - Cursor: add `"agentwikis": { "url": "https://agentwikis.com/mcp", "headers": { "Authorization": "Bearer aw_your_key" } }` under `mcpServers` in `~/.cursor/mcp.json`.
 
 In Codex, Grok Build and Hermes Agent the connection the user adds is named `agentwikis` and takes the place of this plugin's free one. Never ask the user to paste the key into the chat.
