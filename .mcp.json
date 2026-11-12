@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "agentwikis": {
+      "type": "http",
+      "url": "https://agentwikis.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.agentwikis_pro_key}"
+      }
+    },
+    "aigarage": {
+      "type": "http",
+      "url": "https://agentwikis.com/content/aigarage/mcp"
+    }
+  }
+}
