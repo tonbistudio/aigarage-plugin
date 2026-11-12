@@ -32,7 +32,7 @@ Without a key the server serves the free tier and says what it left out: `open_w
 
 Every locked result ends with "How to unlock" and the link https://agentwikis.com/pro#connect. When something the user asked for is locked, say what is locked, give that link, and tell them where the key goes in the app you are running in. The key is optional and hosted: it goes into the app's connection to `https://agentwikis.com/mcp` as the header `Authorization: Bearer <key>`. Nothing is installed.
 
-- Claude Code with this plugin: the plugin asks for the key when it is enabled. To add or change it: `claude plugin configure aigarage@aigarage`, then restart Claude Code.
+- Claude Code with this plugin: the plugin asks for the key when it is enabled. To add or change it, the user types `/plugin configure aigarage@aigarage` inside Claude Code, pastes the key, and restarts Claude Code. (In a terminal, `claude plugin configure` only shows the options.)
 - Codex: save the key in the environment variable `AGENTWIKIS_API_KEY` (Windows: `setx AGENTWIKIS_API_KEY <key>`, then a new terminal; macOS or Linux: `export AGENTWIKIS_API_KEY=<key>` in the shell profile), then run `codex mcp add agentwikis --url https://agentwikis.com/mcp --bearer-token-env-var AGENTWIKIS_API_KEY`.
 - Grok Build: `grok mcp add --scope user agentwikis https://agentwikis.com/mcp --header "Authorization: Bearer <key>"`.
 - Hermes Agent: `hermes mcp add agentwikis --url https://agentwikis.com/mcp --auth header`, answer yes to authentication, paste the key, then `/reload-mcp`.

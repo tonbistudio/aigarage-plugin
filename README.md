@@ -43,7 +43,7 @@ Any other MCP client can add the two server URLs above directly.
 
 Optional. Everything works on the free tier without a key. A key from https://agentwikis.com/pro unlocks XL wiki pages, Pro skills, agent tools and routines. It goes into the app's connection to `https://agentwikis.com/mcp`; nothing is installed. The same steps are on https://agentwikis.com/pro#connect.
 
-- Claude Code: the plugin asks for the key when you enable it. To add or change it later, run `claude plugin configure aigarage@aigarage`.
+- Claude Code: the plugin asks for the key when you enable it. To add or change it later, type `/plugin configure aigarage@aigarage` inside Claude Code, paste the key, and restart Claude Code.
 - Codex: save the key in the environment variable `AGENTWIKIS_API_KEY` (Windows: `setx AGENTWIKIS_API_KEY <key>`, then open a new terminal; macOS or Linux: add `export AGENTWIKIS_API_KEY=<key>` to your shell profile), then run
   `codex mcp add agentwikis --url https://agentwikis.com/mcp --bearer-token-env-var AGENTWIKIS_API_KEY`.
 - Grok Build: `grok mcp add --scope user agentwikis https://agentwikis.com/mcp --header "Authorization: Bearer <key>"`.
