@@ -65,11 +65,11 @@ Optional. Everything works on the free tier without a key. A key from https://ag
 - Grok Build: run `grok mcp add --scope user agentwikis "https://agentwikis.com/mcp" --header "Authorization: Bearer aw_your_key"` with your key in place of `aw_your_key` (keep the quotes), then start a new Grok session.
 - Hermes Agent: `hermes mcp add agentwikis --url "https://agentwikis.com/mcp" --auth header`, answer yes to authentication, and paste the key when asked.
 - Cursor:
-  1. Open the Cursor dashboard at https://cursor.com/dashboard, go to **Plugins**, find **AI Garage** and click **Configure**.
-  2. Paste your key into **Agent Wikis Pro key (optional)** and save.
+  1. Open **Customize** in the Cursor sidebar and find **AI Garage**.
+  2. Click **Configure**, paste your key into **Agent Wikis Pro key (optional)** and save.
   3. Restart Cursor. Asking for a Pro skill now returns the full skill instead of a locked notice.
 
-  If your plan has no **Configure** button, add the key to Cursor's own MCP settings instead: open `~/.cursor/mcp.json` (on Windows `%USERPROFILE%\.cursor\mcp.json`) and put this inside `"mcpServers": { }`, with your key in place of `aw_your_key`:
+  Without the plugin, add the key to Cursor's own MCP settings instead: open `~/.cursor/mcp.json` (on Windows `%USERPROFILE%\.cursor\mcp.json`) and put this inside `"mcpServers": { }`, with your key in place of `aw_your_key`:
 
   ```
   "agentwikis": { "url": "https://agentwikis.com/mcp", "headers": { "Authorization": "Bearer aw_your_key" } }
