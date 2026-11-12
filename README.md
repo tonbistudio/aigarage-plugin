@@ -69,6 +69,8 @@ Optional. Everything works on the free tier without a key. A key from https://ag
   2. Click **Configure**, paste your key into **Agent Wikis Pro key (optional)** and save.
   3. Restart Cursor. Asking for a Pro skill now returns the full skill instead of a locked notice.
 
+  If you also have AI Garage installed in Claude Code, Cursor loads that copy too, and it can't take the key. Turn that copy off in **Customize**.
+
   Without the plugin, add the key to Cursor's own MCP settings instead: open `~/.cursor/mcp.json` (on Windows `%USERPROFILE%\.cursor\mcp.json`) and put this inside `"mcpServers": { }`, with your key in place of `aw_your_key`:
 
   ```
