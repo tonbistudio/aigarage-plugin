@@ -30,13 +30,28 @@ Search these catalogues directly with `query`. There is no need to pick a specia
 
 Without a key the server serves the free tier and says what it left out: `open_wiki` reports the Pro (XL) page count, `search` reports how many XL pages it did not search, and the catalogues mark locked entries `readable: false`. Do not guess at locked content.
 
-Every locked result ends with "How to unlock" and the link https://agentwikis.com/pro#connect. When something the user asked for is locked, say what is locked, give that link, and tell them where the key goes in the app you are running in. The key is optional and hosted: it goes into the app's connection to `https://agentwikis.com/mcp` as the header `Authorization: Bearer <key>`. Nothing is installed.
+Every locked result ends with "How to unlock" and the link https://agentwikis.com/pro#connect. When something the user asked for is locked, say what is locked, give that link, and tell them where the key goes in the app you are running in. The key is optional and hosted: it goes into the app's connection to `https://agentwikis.com/mcp` as the header `Authorization: Bearer aw_your_key`. Nothing is installed. Give the user the steps for their app as a numbered list with each command exactly as written, and tell them to put their key in place of `aw_your_key`, keeping the quotes.
 
 - Claude Code with this plugin: the plugin asks for the key when it is enabled. To add or change it, the user types `/plugin configure aigarage@aigarage` inside Claude Code, pastes the key, and restarts Claude Code. (In a terminal, `claude plugin configure` only shows the options.)
-- Codex: save the key in the environment variable `AGENTWIKIS_API_KEY` (Windows: `setx AGENTWIKIS_API_KEY <key>`, then a new terminal; macOS or Linux: `export AGENTWIKIS_API_KEY=<key>` in the shell profile), then run `codex mcp add agentwikis --url https://agentwikis.com/mcp --bearer-token-env-var AGENTWIKIS_API_KEY`.
-- Grok Build: `grok mcp add --scope user agentwikis https://agentwikis.com/mcp --header "Authorization: Bearer <key>"`.
+- Codex:
+  1. Save the key on the computer. On Windows, open PowerShell and run this, with the key in place of `aw_your_key` (keep the quotes). It prints `SUCCESS: Specified value was saved.`
+
+     ```
+     setx AGENTWIKIS_API_KEY "aw_your_key"
+     ```
+
+     On a Mac, run this instead (on Linux, use `~/.bashrc` in place of `~/.zshrc`):
+
+     ```
+     echo 'export AGENTWIKIS_API_KEY="aw_your_key"' >> ~/.zshrc
+     ```
+
+  2. Close the terminal and open a new one, so it can see the key.
+  3. Run `codex mcp add agentwikis --url https://agentwikis.com/mcp --bearer-token-env-var AGENTWIKIS_API_KEY`.
+  4. Start a new Codex session.
+- Grok Build: run `grok mcp add --scope user agentwikis https://agentwikis.com/mcp --header "Authorization: Bearer aw_your_key"` with the key in place of `aw_your_key` (keep the quotes), then start a new Grok session.
 - Hermes Agent: `hermes mcp add agentwikis --url https://agentwikis.com/mcp --auth header`, answer yes to authentication, paste the key, then `/reload-mcp`.
-- Cursor: add `"agentwikis": { "url": "https://agentwikis.com/mcp", "headers": { "Authorization": "Bearer <key>" } }` under `mcpServers` in `~/.cursor/mcp.json`.
+- Cursor: add `"agentwikis": { "url": "https://agentwikis.com/mcp", "headers": { "Authorization": "Bearer aw_your_key" } }` under `mcpServers` in `~/.cursor/mcp.json`.
 
 In Codex, Grok Build and Hermes Agent the connection the user adds is named `agentwikis` and takes the place of this plugin's free one. Never ask the user to paste the key into the chat.
 
