@@ -5,7 +5,7 @@ description: Use when you need current, source-backed reference documentation fo
 
 # Agent Wikis
 
-The `agentwikis` MCP server serves maintained, source-backed wikis for AI and developer tools. All tools are read-only.
+The `agentwikis` MCP server serves maintained, source-backed wikis for AI and developer tools. All of its MCP tools only read; nothing runs on the server.
 
 ## Reading a wiki
 
@@ -21,7 +21,7 @@ Cite the wiki page you used. Each page carries its sources and the version it de
 ## Skills, agent tools and routines
 
 - `list_skills(query?)` and `read_skill(name)`: field-tested procedures for specific jobs. Load one before starting a job it matches.
-- `list_agent_tools(query?)` and `read_agent_tool(name, path?)`: command-line tools taken from the specialist agents. Each entry names the specialist it comes from. `access: "pro"` tools are read-only and can be loaded one at a time. `access: "install-only"` tools change things, so they are described but never served; they come with the full specialist.
+- `list_agent_tools(query?)` and `read_agent_tool(name, path?)`: command-line tools taken from the specialist agents. Each entry names the specialist it comes from. `access: "pro"` tools are small and read-only: `read_agent_tool` serves their files. `access: "download"` tools are bigger or change things: with Pro, `read_agent_tool` gives their README and a download link (valid 15 minutes) with a sha256; download it with curl, check the sha256, unpack it and follow its README. If a link has expired, call `read_agent_tool` again.
 - `list_routines(query?)` and `read_routine(name, path?)`: scheduled jobs from the specialist agents, each with a schedule, a script and a prompt.
 
 Search these catalogues directly with `query`. There is no need to pick a specialist first. Tools and routines are files that run on the user's machine; nothing runs on the server. Before saving, running or scheduling any of them, show the user what it does and get their explicit OK. Never create a scheduled job without the user's confirmation.
