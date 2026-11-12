@@ -1,0 +1,17 @@
+{
+  "name": "aigarage",
+  "owner": {
+    "name": "AI Garage",
+    "url": "https://agentwikis.com"
+  },
+  "metadata": {
+    "description": "The AI Garage plugin: AI Garage's videos, newsletter and X posts, plus Agent Wikis."
+  },
+  "plugins": [
+    {
+      "name": "aigarage",
+      "source": "./",
+      "description": "Search AI Garage's YouTube videos, newsletter and X posts, plus the Agent Wikis reference library, from inside your agent."
+    }
+  ]
+}

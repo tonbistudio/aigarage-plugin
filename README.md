@@ -8,7 +8,7 @@ Search AI Garage's YouTube videos, newsletter and X posts, plus the Agent Wikis 
 
 Two hosted MCP servers (nothing runs on your machine):
 
-- `aigarage` at `https://agentwikis.com/content/aigarage/mcp`. No key. Tools: `search_content`, `get_item`, `list_latest`. Videos come back with timestamp links. X posts come back as links only.
+- `aigarage` at `https://agentwikis.com/content/aigarage/mcp`. No key. Tools: `search_content`, `get_item`, `list_latest`. Videos come back with chapter timestamp links, newsletter issues with their page link, X posts as links only.
 - `agentwikis` at `https://agentwikis.com/mcp`. Free without a key. Tools: `list_wikis`, `open_wiki`, `search`, `read_document`, `list_skills`, `read_skill`, `list_agent_tools`, `read_agent_tool`, `list_routines`, `read_routine`.
 
 Three skills:
@@ -21,21 +21,21 @@ Three skills:
 
 Claude Code:
 
-    claude plugin marketplace add <owner>/<repo>
+    claude plugin marketplace add tonbistudio/aigarage-plugin
     claude plugin install aigarage@aigarage
 
 Codex:
 
-    codex plugin marketplace add <owner>/<repo>
+    codex plugin marketplace add tonbistudio/aigarage-plugin
     codex plugin add aigarage@aigarage
 
 Grok Build:
 
-    grok plugin install <owner>/<repo>#plugins/aigarage
+    grok plugin install tonbistudio/aigarage-plugin
 
 Hermes:
 
-    hermes plugins install <owner>/<repo> --enable
+    hermes plugins install tonbistudio/aigarage-plugin --enable
 
 Cursor reads the same folder (root `plugin.json`, `skills/`, `mcp.json`).
 
